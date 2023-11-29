@@ -1,31 +1,23 @@
 package spring.di.entity;
 
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
-
-@Component
 public class NewlecExam implements Exam {
-	
-	@Value("20")
+
 	private int kor;
-	@Value("30")
 	private int eng;
 	private int math;
 	private int com;
-
+	
+	
 	public NewlecExam() {
+		super();
 	}
 
 	public NewlecExam(int kor, int eng, int math, int com) {
+		super();
 		this.kor = kor;
 		this.eng = eng;
 		this.math = math;
 		this.com = com;
-	}
-
-	@Override
-	public int total() {
-		return kor + eng + math + com;
 	}
 
 	public int getKor() {
@@ -61,6 +53,12 @@ public class NewlecExam implements Exam {
 	}
 
 	@Override
+	public int total() {
+		// TODO Auto-generated method stub
+		return kor+eng+math+com;
+	}
+
+	@Override
 	public float avg() {
 		// TODO Auto-generated method stub
 		return total() / 4.0f;
@@ -71,6 +69,4 @@ public class NewlecExam implements Exam {
 		return "NewlecExam [kor=" + kor + ", eng=" + eng + ", math=" + math + ", com=" + com + "]";
 	}
 
-	
-	
 }

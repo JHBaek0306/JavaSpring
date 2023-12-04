@@ -56,6 +56,10 @@ public class NewlecExam implements Exam {
 		
 		
 		int result = kor + eng + math + com;
+		
+		if(kor > 100)
+			throw new IllegalArgumentException("not valid kor scores");
+		
 		long start = System.currentTimeMillis();
 		try {
 			Thread.sleep(200);
